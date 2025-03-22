@@ -68,7 +68,7 @@ stop-db: ## Stop the database
 .PHONY: run-air
 run-air: build ## Run the application with Air
 	@echo  "🟢 Running the application with Air..."
-	@go run github.com/air-verse/air@v1.61.7 -c air.toml
+	@go tool air -c air.toml
 
 .PHONY: test
 test: lint ## Run tests
@@ -104,14 +104,14 @@ mock: ## Generate mocks
 	@rm -rf internal/core/port/mocks/*
 # loop through all files in the port directory and generate mocks
 	@for file in internal/core/port/*.go; do \
-		go run go.uber.org/mock/mockgen@v0.5.0 -source=$$file -destination=internal/core/port/mocks/`basename $$file _port.go`_mock.go; \
+		go tool mockgen -source=$$file -destination=internal/core/port/mocks/`basename $$file _port.go`_mock.go; \
 	done
 
 .PHONY: swagger
 swagger: ## Generate Swagger documentation
 	@echo  "🟢 Generating Swagger documentation..."
-	@go run github.com/swaggo/swag/cmd/swag@v1.16.4 fmt ./...
-	@go run github.com/swaggo/swag/cmd/swag@v1.16.4 init -g ${MAIN_FILE} --parseInternal true
+	@go tool swag fmt ./...
+	@go tool swag init -g ${MAIN_FILE} --parseInternal true
 
 .PHONY: lint
 lint: ## Run linter
@@ -125,23 +125,22 @@ migrate-create: ## Create new migration, usage example: make migrate-create name
 ifndef name
 	$(error name is not set, usage example: make migrate-create name=create_table_products)
 endif
-	migrate create -ext sql -dir ${MIGRATION_PATH} -seq $(name)
+	@go run -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.2 create -ext sql -dir ${MIGRATION_PATH} -seq $(name)
 
 .PHONY: migrate-up
 migrate-up: ## Run migrations
 	@echo  "🟢 Running migrations..."
-	migrate -path ${MIGRATION_PATH} -database "${DB_URL}" -verbose up
+	@go run -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.2 -path ${MIGRATION_PATH} -database "${DB_URL}" -verbose up
 
 .PHONY: migrate-down
 migrate-down: ## Roll back migrations
 	@echo  "🔴 Rolling back migrations..."
-	migrate -path ${MIGRATION_PATH} -database "${DB_URL}" -verbose down
+	@go run -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.2 -path ${MIGRATION_PATH} -database "${DB_URL}" -verbose down
 
 .PHONY: install
 install: ## Install dependencies
 	@echo  "🟢 Installing dependencies..."
 	go mod download
-	@go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@v4.18.2
 
 .PHONY: docker-build
 docker-build: ## Build Docker image
@@ -242,8 +241,8 @@ compose-clean: ## Clean the application with Docker Compose, removing volumes an
 .PHONY: scan
 scan: ## Run security scan
 	@echo  "🟢 Running security scan..."
-	@go run golang.org/x/vuln/cmd/govulncheck@v1.1.4 -show verbose ./...
-	@go run github.com/aquasecurity/trivy/cmd/trivy@latest image --severity HIGH,CRITICAL $(DOCKER_REGISTRY)/$(DOCKER_REGISTRY_APP):latest
+	@go tool govulncheck -show verbose ./...
+	@go tool trivy image --severity HIGH,CRITICAL $(DOCKER_REGISTRY)/$(DOCKER_REGISTRY_APP):latest
 
 .PHONY: new-branch
 new-branch: ## Create new branch
