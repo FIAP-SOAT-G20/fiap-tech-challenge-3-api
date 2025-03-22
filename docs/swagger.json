@@ -1,8 +1,8 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "### FIAP Tech Challenge Phase 2 - 10SOAT - G18",
-        "title": "Fast Food API v2",
+        "description": "### FIAP Tech Challenge Phase 3 - 10SOAT - G22",
+        "title": "Fast Food API v3",
         "contact": {},
         "version": "1"
     },
@@ -2960,6 +2960,6 @@
     ],
     "externalDocs": {
         "description": "GitHub Repository",
-        "url": "https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2"
+        "url": "https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase3"
     }
 }

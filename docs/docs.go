@@ -2967,7 +2967,7 @@ const docTemplate = `{
     ],
     "externalDocs": {
         "description": "GitHub Repository",
-        "url": "https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2"
+        "url": "https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase3"
     }
 }`
 
@@ -2977,8 +2977,8 @@ var SwaggerInfo = &swag.Spec{
 	Host:             "",
 	BasePath:         "/api/v1",
 	Schemes:          []string{},
-	Title:            "Fast Food API v2",
-	Description:      "### FIAP Tech Challenge Phase 2 - 10SOAT - G18",
+	Title:            "Fast Food API v3",
+	Description:      "### FIAP Tech Challenge Phase 3 - 10SOAT - G22",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",
