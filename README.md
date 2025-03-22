@@ -2,7 +2,7 @@
 
 ![GitHub CI - Tests](https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/actions/workflows/test.yml/badge.svg)
 
-# <p align="center"><b>Fast Food</b> <small>FIAP Tech Challenge 2 - G18</small></p>
+# <p align="center"><b>Fast Food</b> <small>FIAP Tech Challenge 3 - G22</small></p>
 
 <p align="center">
     <img src="https://img.shields.io/badge/Code-Go-informational?style=flat-square&logo=go&color=00ADD8" alt="Go" />
@@ -23,12 +23,13 @@
 
 ## 💬 About
 
-Repository for the [FIAP](https://postech.fiap.com.br/) Tech Challenge 2, focused on developing a monolith backend system for managing orders in a fast-food restaurant.
+Repository for the [FIAP](https://postech.fiap.com.br/) Tech Challenge 3, focused on developing a monolith backend system for managing orders in a fast-food restaurant.
 
-Tech Challenge 2 specifications can be found [here](docs/tc2-spec.pdf). Youtube video explaining this project can be found [here](https://youtu.be/RJ7hwedA12s)
+Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube video explaining this project can be found [here](TBD)
 
 > [!NOTE]
 > Tech Challenge 1 repository can be found [here](https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase1)  
+> Tech Challenge 2 repository can be found [here](https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2)  
 
 ## 📚 Dictionary - Ubiquitous Language
 
@@ -380,62 +381,7 @@ make test
 
 ## :clap: Acknowledgments
 
-- [Hexagonal Architecture, Ports and Adapters in Go](https://medium.com/@kyodo-tech/hexagonal-architecture-ports-and-adapters-in-go-f1af950726b)
-- [Building RESTful API with Hexagonal Architecture in Go](https://dev.to/bagashiz/building-restful-api-with-hexagonal-architecture-in-go-1mij)
-- [Hexagonal Architecture in Go](https://medium.com/@matiasvarela/hexagonal-architecture-in-go-cfd4e436faa3)
-- [The S.O.L.I.D Principles in Pictures](https://medium.com/backticks-tildes/the-s-o-l-i-d-principles-in-pictures-b34ce2f1e898)
-- [Health Check Response Format for HTTP APIs](https://datatracker.ietf.org/doc/html/draft-inadarei-api-health-check-06)
-- [Event Storming](https://www.eventstorming.com/)
-- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
-- [Semantic Versioning](https://semver.org/)
-- [Alistair in the "Hexagone" 1/3](https://www.youtube.com/watch?v=th4AgBcrEHA&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&ab_channel=DDDFR)
-- [Alistair in the "Hexagone" 2/3](https://www.youtube.com/watch?v=iALcE8BPs94&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&index=2&ab_channel=DDDFR)
-- [Alistair in the "Hexagone" 3/3](https://www.youtube.com/watch?v=DAe0Bmcyt-4&list=PLGl1Jc8ErU1w27y8-7Gdcloy1tHO7NriL&index=3&ab_channel=DDDFR)
-- [Clean Architecture - Uncle Bob](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
-- [How to implement Clean Architecture in Go (Golang)](https://threedots.tech/post/introducing-clean-architecture)
-- [Clean Architecture — A essência direto ao ponto](https://medium.com/@rvf.vazquez/clean-architecture-a-ess%C3%AAncia-draft-6d902e10d4b2)
-- [Clean Architecture with Golang](https://medium.com/nerd-for-tech/clean-architecture-with-golang-3fa1a1c2b6d6)
-- [Generate Go Project with Clean Architecture - Thiago Adriano (FIAP)](https://github.com/tadrianonet/go-clean-arch-generator)
-- [POSTECH_SOAT_CleanArchitecture](https://github.com/FIAP/POSTECH_SOAT_CleanArchitecture/blob/main/aula_08/src/index.ts)
-- [Fiap - Clean Architecture Usando Go - Erick Muller (FIAP)](https://github.com/proferickmuller/cleanarch-golang)
-- [Trivy](https://trivy.dev/latest/)
-- [Clean Architecture, o início - Erick Muller (FIAP)](https://medium.com/@oerickmuller/clean-architecture-o-in%C3%ADcio-4fd74578155d)
-- [Building Better Go Applications with Clean Architecture: A Practical Guide for Beginners](https://medium.com/@jamal.kaksouri/building-better-go-applications-with-clean-architecture-a-practical-guide-for-beginners-98ea061bf81a)
-- [Clean Architecture, 2 years later](https://eltonminetto.dev/en/post/2020-07-06-clean-architecture-2years-later/)
-- [Implementando Clean Architecture com Golang](https://dev.to/booscaaa/implementando-clean-architecture-com-golang-4n0a)
-- [Go Backend Clean Architecture](https://outcomeschool.com/blog/go-backend-clean-architecture)
-- [golang-clean-architecture](https://pkg.go.dev/github.com/hendrorahmat/golang-clean-architecture#section-readme)
-- [[Hands-on Guide] How to Implement Clean Architecture in Golang?](https://reliasoftware.com/blog/clean-architecture-golang)
-- [Clean DDD lessons: presenters](https://medium.com/unil-ci-software-engineering/clean-ddd-lessons-presenters-6f092308b75e)
-- [Clean Architecture: Understanding the Role of Presenters](https://medium.com/@erickzanetti/clean-architecture-understanding-the-role-of-presenters-8707ff018aa3)
-- [Golang Microservices Boilerplate - Clean Architecture](https://github.com/gbrayhan/microservices-go)
-- [GRACEFULL SHUTDOWN EM GOLANG - Finalizando requisições antes de desligar o projeto!](https://www.youtube.com/watch?v=V52Th2h_8FM&ab_channel=HunCoding)
-- [Implement value objects with Domain-Driven Design (DDD)](https://medium.com/@nirajranasinghe/implement-value-objects-with-domain-driven-design-ddd-3aeb4e88cee5)
-- [Entendendo Presenters na Clean Architecture](https://www.youtube.com/watch?v=zrYAnqA-VQs&ab_channel=FullCycle)
-- [RFC 8977 Registration Data Access Protocol (RDAP) Query Parameters for Result Sorting and Paging](https://www.rfc-editor.org/rfc/rfc8977.html#name-sort-parameter)
-- [PostgreSQL - 7.5. Sorting Rows (ORDER BY) #](https://www.postgresql.org/docs/current/queries-order.html#QUERIES-ORDER)
-- [WordPress API Reference - Posts](https://developer.wordpress.org/rest-api/reference/posts/)
-- [Pushing container images to GitHub Container Registry with GitHub Actions](https://dev.to/willvelida/pushing-container-images-to-github-container-registry-with-github-actions-1m6b)
-- [GitHub Packages.. Containers in a GitHub repo?](https://www.youtube.com/watch?v=gqseP_wTZsk&ab_channel=DevOpsJourney)
-- [Docker- Multi-platform builds - Multiple native nodes](https://docs.docker.com/build/building/multi-platform/#multiple-native-nodes)
-- [Faster Multi-Platform Builds: Dockerfile Cross-Compilation Guide](https://www.docker.com/blog/faster-multi-platform-builds-dockerfile-cross-compilation-guide/)
-- [Stack Overflow - What does the w flag mean when passed in via the ldflags option to the go command?](https://stackoverflow.com/a/22276273/1403288)
-- [POSTECH_SOAT_KUBERNETES_2 FIAP Repository](https://github.com/FIAP/POSTECH_SOAT_KUBERNETES_2)
-- [Go Testing with testify/suite](https://hsleep.medium.com/about-testify-suite-package-ec818a02b8f)
-- [Melhores práticas na utilização de ENUMs](https://aprendagolang.com.br/melhores-praticas-na-utilizacao-de-enums/)
-- [Testing in Go: Golden Files](https://ieftimov.com/posts/testing-in-go-golden-files/)
-- [Testing in Go: Fixtures](https://ieftimov.com/posts/testing-in-go-fixtures/)
-- [Testing in Go: Intermediate Tips and Techniques](https://betterstack.com/community/guides/testing/intemediate-go-testing/)
-- [TESTES UNITÁRIOS COM GIN GONIC - Como criar testes para os endpoints do seu projeto?](https://www.youtube.com/watch?v=rwReyPLmMs8&ab_channel=HunCoding)
-- [@Mockoon/cli](https://github.com/mockoon/mockoon/tree/main/packages/cli)
-- [Mercado Pago Developers - QR Code > Pré-requisitos](https://www.mercadopago.com.br/developers/pt/docs/qr-code/pre-requisites)
-- [Mercado Pago Developers - QR Code > Lojas e caixas](https://www.mercadopago.com.br/developers/pt/docs/qr-code/stores-pos/stores-and-pos)
-- [Mercado Pago Developers - QR Code > Integrar o QR Modelo Dinâmico](https://www.mercadopago.com.br/developers/pt/docs/qr-code/integration-configuration/qr-dynamic/integration)
-- [Mercado Pago Developers - QR Code > Realizar uma compra teste](https://www.mercadopago.com.br/developers/pt/docs/qr-code/integration-test/dynamic-model/test-purchase)
-- [Mercado Pago Developers - API > Criar loja](https://www.mercadopago.com.br/developers/pt/reference/stores/_users_user_id_stores/post)
-- [Mercado Pago Developers - API > Criar caixa](https://www.mercadopago.com.br/developers/pt/reference/pos/_pos/post)
-- [Mercado Pago Developers - API > Criar um quadro QR](https://www.mercadopago.com.br/developers/pt/reference/qr-dynamic/_instore_orders_qr_seller_collectors_user_id_pos_external_pos_id_qrs/post)
-- [C4 Model](https://c4model.com/)
+- [TBD](TBD)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -449,7 +395,6 @@ make test
         <td align="center" valign="top" width="14.28%"><a href="https://github.com/filipe1309"><img src="https://github.com/filipe1309.png" width="100px;" alt=""/><br /><sub><b>Filipe Leuch Bonfim</b></sub></a><br />
         <td align="center" valign="top" width="14.28%"><a href="https://github.com/hugokishi"><img src="https://github.com/hugokishi.png" width="100px;" alt=""/><br /><sub><b>Hugo Kishi</b></sub></a><br />
         <td align="center" valign="top" width="14.28%"><a href="https://github.com/marcos-nsantos"><img src="https://github.com/marcos-nsantos.png" width="100px;" alt=""/><br /><sub><b>Marcos Santos</b></sub></a><br />
-        <td align="center" valign="top" width="14.28%"><a href="https://github.com/vitorparras"><img src="https://github.com/vitorparras.png" width="100px;" alt=""/><br /><sub><b>Vitor Parras</b></sub></a><br />
       </tr>
     </tbody>
   </table>

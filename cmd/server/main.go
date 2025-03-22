@@ -18,9 +18,9 @@ import (
 	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/infrastructure/service"
 )
 
-// @title						Fast Food API v2
+// @title						Fast Food API v3
 // @version					1
-// @description				### FIAP Tech Challenge Phase 2 - 10SOAT - G18
+// @description				### FIAP Tech Challenge Phase 3 - 10SOAT - G22
 // @servers					[ { "url": "http://localhost:8080" }, { "url": "http://localhost:30001" } ]
 // @BasePath					/api/v1
 // @tag.name					sign-up
@@ -41,7 +41,7 @@ import (
 // @tag.description			Health check
 //
 // @externalDocs.description	GitHub Repository
-// @externalDocs.url			https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2
+// @externalDocs.url			https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase3
 //
 // @securityDefinitions.apikey	BearerAuth
 // @in							header
