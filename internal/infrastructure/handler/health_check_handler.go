@@ -2,7 +2,6 @@ package handler
 
 import (
 	"database/sql"
-	"fmt"
 	"net/http"
 	"time"
 
@@ -49,8 +48,7 @@ func (h *HealthCheckHandler) HealthCheck(c *gin.Context) {
 		},
 	}
 
-	dbURL := fmt.Sprintf("postgres://%s:%s@%s:%d/%s?sslmode=disable", cfg.DBUser, cfg.DBPassword, cfg.DBHost, cfg.DBPort, cfg.DBName)
-	db, err := sql.Open("postgres", dbURL)
+	db, err := sql.Open("postgres", cfg.DBDSN)
 	if err != nil {
 		_ = c.Error(err)
 		return

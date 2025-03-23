@@ -25,7 +25,7 @@ var migrationsFS embed.FS
 
 type Database struct {
 	*gorm.DB
-	dbURL string
+	dbDSN string
 }
 
 type GormLogger struct {
@@ -70,24 +70,15 @@ func (l *GormLogger) Trace(ctx context.Context, begin time.Time, fc func() (sql 
 }
 
 func NewPostgresConnection(cfg *config.Config, logger *logger.Logger) (*Database, error) {
-	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%d sslmode=disable",
-		cfg.DBHost,
-		cfg.DBUser,
-		cfg.DBPassword,
-		cfg.DBName,
-		cfg.DBPort,
-	)
-
-	dbURL := fmt.Sprintf("postgres://%s:%s@%s:%d/%s?sslmode=disable", cfg.DBUser, cfg.DBPassword, cfg.DBHost, cfg.DBPort, cfg.DBName)
-
 	// Configure GORM with slog logger
 	gormConfig := &gorm.Config{
 		Logger:      &GormLogger{Logger: logger},
 		PrepareStmt: true,
 	}
 
-	db, err := gorm.Open(postgres.Open(dsn), gormConfig)
+	db, err := gorm.Open(postgres.Open(cfg.DBDSN), gormConfig)
 	if err != nil {
+		fmt.Println(cfg.DBDSN, err)
 		return nil, fmt.Errorf("failed to connect to database: %w", err)
 	}
 
@@ -106,7 +97,7 @@ func NewPostgresConnection(cfg *config.Config, logger *logger.Logger) (*Database
 	// SetConnMaxLifetime sets the maximum amount of time a connection may be reused
 	sqlDB.SetConnMaxLifetime(cfg.DBMaxLifetime)
 
-	return &Database{db, dbURL}, nil
+	return &Database{db, cfg.DBDSN}, nil
 }
 
 // Migrate runs database migrations
@@ -116,7 +107,7 @@ func (db *Database) Migrate() error {
 		return err
 	}
 
-	migrations, err := migrate.NewWithSourceInstance("iofs", driver, db.dbURL)
+	migrations, err := migrate.NewWithSourceInstance("iofs", driver, db.dbDSN)
 	if err != nil {
 		return err
 	}

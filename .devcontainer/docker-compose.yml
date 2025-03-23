@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   app:
@@ -12,11 +12,7 @@ services:
       - ..:/workspace:cached
       - go-cache:/go
     environment:
-      - DB_HOST=postgres
-      - DB_PORT=5432
-      - DB_USER=postgres
-      - DB_PASSWORD=postgres
-      - DB_NAME=fastfood_10soat_g18_tc2
+      - DB_DSN=postgres://postgres:postgres@postgres:5432/fastfood_10soat_g22_tc3?sslmode=disable
     command: sleep infinity
     network_mode: service:postgres
 
@@ -28,7 +24,7 @@ services:
     environment:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
-      POSTGRES_DB: fastfood_10soat_g18_tc2
+      POSTGRES_DB: fastfood_10soat_g22_tc3
 
 volumes:
   postgres-data:

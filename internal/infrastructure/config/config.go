@@ -11,11 +11,7 @@ import (
 
 type Config struct {
 	// Database settings
-	DBHost         string
-	DBPort         int
-	DBUser         string
-	DBPassword     string
-	DBName         string
+	DBDSN          string
 	DBMaxOpenConns int
 	DBMaxIdleConns int
 	DBMaxLifetime  time.Duration
@@ -49,7 +45,6 @@ func LoadConfig() *Config {
 		log.Printf("Warning: .env file not found or error loading it: %v", err)
 	}
 
-	dbPort, _ := strconv.Atoi(getEnv("DB_PORT", "5432"))
 	dbMaxOpenConns, _ := strconv.Atoi(getEnv("DB_MAX_OPEN_CONNS", "25"))
 	dbMaxIdleConns, _ := strconv.Atoi(getEnv("DB_MAX_IDLE_CONNS", "25"))
 	dbMaxLifetime, _ := time.ParseDuration(getEnv("DB_CONN_MAX_LIFETIME", "5m"))
@@ -71,11 +66,7 @@ func LoadConfig() *Config {
 
 	return &Config{
 		// Database settings
-		DBHost:         getEnv("DB_HOST", "localhost"),
-		DBPort:         dbPort,
-		DBUser:         getEnv("DB_USER", "postgres"),
-		DBPassword:     getEnv("DB_PASSWORD", "postgres"),
-		DBName:         getEnv("DB_NAME", "fastfood_10soat_g18_tc2"),
+		DBDSN:          getEnv("DB_DSN", "host=localhost port=5432 user=postgres password=postgres dbname=fastfood_10soat_g22_tc3 sslmode=disable"),
 		DBMaxOpenConns: dbMaxOpenConns,
 		DBMaxIdleConns: dbMaxIdleConns,
 		DBMaxLifetime:  dbMaxLifetime,
