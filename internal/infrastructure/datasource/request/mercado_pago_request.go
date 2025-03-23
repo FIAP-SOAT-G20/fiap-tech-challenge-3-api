@@ -1,6 +1,6 @@
 package datasource_request
 
-import "github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/domain/entity"
+import "github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/domain/entity"
 
 type FakeMercadoPagoRequest struct {
 	ExternalReference string                        `json:"external_reference"`

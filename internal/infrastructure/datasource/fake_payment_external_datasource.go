@@ -5,14 +5,14 @@ import (
 	"encoding/json"
 	"errors"
 
-	datasource_request "github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/infrastructure/datasource/request"
-	datasource_response "github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/infrastructure/datasource/response"
+	datasource_request "github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/datasource/request"
+	datasource_response "github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/datasource/response"
 
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/domain"
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/domain/entity"
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/port"
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/infrastructure/config"
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/infrastructure/httpclient"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/domain"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/domain/entity"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/port"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/config"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/httpclient"
 )
 
 type FakePaymentExternalDataSource struct {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/domain"
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/port"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/domain"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/port"
 )
 
 func JWTAuthMiddleware(jwtService port.JWTService) gin.HandlerFunc {

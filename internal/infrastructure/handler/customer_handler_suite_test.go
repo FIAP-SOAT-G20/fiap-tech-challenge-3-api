@@ -4,9 +4,9 @@ import (
 	"context"
 	"testing"
 
-	mockport "github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/port/mocks"
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/infrastructure/handler"
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/util"
+	mockport "github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/port/mocks"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/handler"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/util"
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/suite"

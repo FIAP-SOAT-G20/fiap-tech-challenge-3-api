@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-![GitHub CI - Tests](https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/actions/workflows/test.yml/badge.svg)
+![GitHub CI - Tests](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/actions/workflows/test.yml/badge.svg)
 
 # <p align="center"><b>Fast Food</b> <small>FIAP Tech Challenge 3 - G22</small></p>
 
@@ -225,11 +225,11 @@ Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube 
 ## :cd: Installation
 
 ```sh
-git clone https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2.git
+git clone https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api.git
 ```
 
 ```sh
-cd FIAP-TechChallenge-Fase2
+cd fiap-tech-challenge-3-api
 ```
 
 Set the environment variables
@@ -333,8 +333,8 @@ The Kubernetes organization is divided into three main directories: `app`, `conf
 ## :hammer_and_wrench: Development
 
 1. Install Go: https://golang.org/doc/install
-2. Clone this repository: `git clone https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2`
-3. Change to the project directory: `cd FIAP-TechChallenge-Fase2`
+2. Clone this repository: `git clone https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api`
+3. Change to the project directory: `cd fiap-tech-challenge-3-api`
 4. Checkout to the development branch: `make new-branch`
 5. Set the environment variables: `cp .env.example .env`
 6. Install dependencies by running `make install`
@@ -349,7 +349,7 @@ The Kubernetes organization is divided into three main directories: `app`, `conf
 15. Push to the branch and Open a new PR by running `make pull-request`
 16. The GitHub Actions will run the tests, lint and vulnerability check automatically
 17. After the PR is approved, merge it to the main branch
-18. Generate a new `release` tag ([here](https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/releases/new)) with [semantic versioning](https://semver.org/)
+18. Generate a new `release` tag ([here](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/releases/new)) with [semantic versioning](https://semver.org/)
 <!-- 19. The Kubernetes deployment will be updated automatically -->
 
 > [!TIP]
@@ -359,7 +359,7 @@ The Kubernetes organization is divided into three main directories: `app`, `conf
 > [!TIP]
 > 18: When a new `release` tag is created, the GitHub Actions will build and push the image to the  
 > GitHub Container Registry (GHCR) from GitHub Packages,  
-> the image will be available at `ghcr.io/fiap-soat-g20/fiap-techchallenge-fase2:latest`  
+> the image will be available at `ghcr.io/fiap-soat-g20/fiap-tech-challenge-3-api:latest`  
 > About semantic versioning:  
 > if you are fixing bugs, increment the patch version (v0.0.1)  
 > if you are adding new features, increment the minor version (v0.1.0)  

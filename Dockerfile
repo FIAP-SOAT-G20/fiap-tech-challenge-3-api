@@ -1,7 +1,7 @@
 FROM --platform=$BUILDPLATFORM golang:1.24-alpine AS builder
-LABEL org.opencontainers.image.source="https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2" \
-      org.opencontainers.image.authors="FIAP 10SOAT G18" \
-      org.opencontainers.image.title="Fast Food FIAP TC-2" \
+LABEL org.opencontainers.image.source="https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api" \
+      org.opencontainers.image.authors="FIAP 10SOAT G22" \
+      org.opencontainers.image.title="Fast Food FIAP TC-3" \
       org.opencontainers.image.description="Image of a backend API for a fast food restaurant"
 WORKDIR /app
 COPY go.mod go.sum ./

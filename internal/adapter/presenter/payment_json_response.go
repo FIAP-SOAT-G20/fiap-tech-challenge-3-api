@@ -1,6 +1,6 @@
 package presenter
 
-import valueobject "github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/domain/value_object"
+import valueobject "github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/domain/value_object"
 
 type PaymentJsonResponse struct {
 	ID                uint64                    `json:"id" example:"1"`

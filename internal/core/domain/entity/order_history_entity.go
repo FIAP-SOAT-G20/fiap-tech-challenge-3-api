@@ -1,8 +1,9 @@
 package entity
 
 import (
-	valueobject "github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/domain/value_object"
 	"time"
+
+	valueobject "github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/domain/value_object"
 )
 
 type OrderHistory struct {

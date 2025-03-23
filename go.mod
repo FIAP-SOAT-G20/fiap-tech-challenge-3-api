@@ -1,4 +1,4 @@
-module github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2
+module github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api
 
 go 1.24
 

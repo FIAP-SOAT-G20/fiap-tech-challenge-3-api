@@ -1,6 +1,6 @@
 package request
 
-import "github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/domain/entity"
+import "github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/domain/entity"
 
 type CreatePaymentUriRequest struct {
 	OrderID uint64 `uri:"order_id" binding:"required"`

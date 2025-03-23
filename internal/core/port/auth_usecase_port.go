@@ -3,7 +3,7 @@ package port
 import (
 	"context"
 
-	"github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2/internal/core/dto"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/dto"
 )
 
 // AuthUseCase defines the authentication use case interface
