@@ -289,10 +289,10 @@ make compose-up
 make k8s-apply
 ```
 
-> The resources will be created in the `tech-challenge-system` namespace
+> The resources will be created in the `tech-challenge-ns` namespace
 
 > [!TIP]
-> To view the application, run `make k8s-status` or `kubectl get all -n tech-challenge-system`  
+> To view the application, run `make k8s-status` or `kubectl get all -n tech-challenge-ns`  
 > To remove the application, run `make k8s-delete`
 
 > [!NOTE]

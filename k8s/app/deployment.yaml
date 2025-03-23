@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: tech-challenge-api
-  namespace: tech-challenge-system
+  namespace: tech-challenge-ns
 spec:
   replicas: 3
   selector:
