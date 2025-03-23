@@ -54,12 +54,12 @@ func main() {
 
 	db, err := database.NewPostgresConnection(cfg, loggerInstance)
 	if err != nil {
-		loggerInstance.Error("failed to connect to database", "error", err)
+		loggerInstance.Error("failed to connect to database", "error", err.Error())
 		os.Exit(1)
 	}
 
 	if err := db.Migrate(); err != nil {
-		loggerInstance.Error("failed to run migrations", "error", err)
+		loggerInstance.Error("failed to run migrations", "error", err.Error())
 		os.Exit(1)
 	}
 
@@ -69,7 +69,7 @@ func main() {
 
 	srv := server.NewServer(cfg, loggerInstance, handlers)
 	if err := srv.Start(); err != nil {
-		loggerInstance.Error("server failed to start", "error", err)
+		loggerInstance.Error("server failed to start", "error", err.Error())
 		os.Exit(1)
 	}
 }
