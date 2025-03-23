@@ -4,7 +4,7 @@ metadata:
   name: tech-challenge-config
   namespace: tech-challenge-system
 data:
-  db_name: "tech_challenge"
+  db_name: "tech-challenge"
   environment: "tech-challenge"
   fake_mercado_pago_url: "http://mock-server.tech-challenge-system.svc.cluster.local:80/mercadopago/instore/orders/qr"
   fake_mercado_pago_notification_url: "http://tech-challenge-api.tech-challenge-system.svc.cluster.local:80/api/v1/payments/callback"
