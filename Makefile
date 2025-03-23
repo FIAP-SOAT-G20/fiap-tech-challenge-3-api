@@ -11,7 +11,7 @@ NAMESPACE=tech-challenge-system
 TEST_PATH=./internal/...
 TEST_COVERAGE_FILE_NAME=coverage.out
 MIGRATION_PATH = internal/infrastructure/database/migrations
-DB_URL = postgres://postgres:postgres@localhost:5432/fastfood_10soat_g18_tc2?sslmode=disable
+DB_URL = postgres://postgres:postgres@localhost:5432/fastfood_10soat_g22_tc3?sslmode=disable
 
 # Go commands
 GOCMD=go
@@ -179,7 +179,7 @@ k8s-apply: ## Apply Kubernetes manifests
 .PHONY: aws-eks-auth
 aws-eks-auth: ## Authenticate with AWS EKS with the 10soat aws profile
 	@echo  "🟢 Authenticating with AWS EKS..."
-	aws eks update-kubeconfig --name fiap-10soat-g18-k8s-cluster --profile 10soat
+	aws eks update-kubeconfig --name fiap-10soat-g22-k8s-cluster --profile 10soat
 
 .PHONY: k8s-delete
 k8s-delete: ## Delete Kubernetes resources

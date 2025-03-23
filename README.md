@@ -253,7 +253,7 @@ make compose-build
 > When you create a new payment (with `POST payments/:order_id/checkout`) the order status will be updated from `OPEN` to `PENDING`,  
 > then the mock server will call the webhook `POST payments/callback`,  
 > and the order status will be updated from `PENDING` to `RECEIVED`.  
-> You can verify mock server logs by running `docker logs mockserver.10soat-g18.dev`.
+> You can verify mock server logs by running `docker logs mockserver.10soat-g22.dev`.
 
 > [!TIP]
 > We have created a step-by-step guide to test the application, you can find it [here](docs/tc2-validation-testing.md).  
