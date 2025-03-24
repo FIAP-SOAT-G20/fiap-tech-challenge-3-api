@@ -19,6 +19,8 @@ spec:
           ports:
             - containerPort: 8080
           env:
+            - name: AWS_VPC_K8S_CNI_EXTERNALSNAT
+              value: "true"
             - name: DB_DSN
               valueFrom:
                 secretKeyRef:
