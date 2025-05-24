@@ -43,6 +43,8 @@ func NewRouter(logger *logger.Logger, cfg *config.Config) *Router {
 
 // RegisterRoutes configure all routes of the application
 func (r *Router) RegisterRoutes(handlers *Handlers) {
+	handlers.Redoc.Register(r.engine.Group("/redoc"))
+
 	// API v1
 	v1 := r.engine.Group("/api/v1")
 	{
@@ -76,4 +78,5 @@ type Handlers struct {
 	Payment      *handler.PaymentHandler
 	Category     *handler.CategoryHandler
 	Auth         *handler.AuthHandler
+	Redoc        *handler.RedocHandler
 }

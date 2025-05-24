@@ -133,6 +133,7 @@ func setupHandlers(db *database.Database, httpClient *httpclient.HTTPClient, cfg
 	paymentHandler := handler.NewPaymentHandler(paymentController)
 	categoryHandler := handler.NewCategoryHandler(categoryController)
 	authHandler := handler.NewAuthHandler(authController)
+	redocHandler := handler.NewRedocHandler()
 
 	handlers := &route.Handlers{
 		Product:      productHandler,
@@ -145,6 +146,7 @@ func setupHandlers(db *database.Database, httpClient *httpclient.HTTPClient, cfg
 		Payment:      paymentHandler,
 		Category:     categoryHandler,
 		Auth:         authHandler,
+		Redoc:        redocHandler,
 	}
 
 	return handlers
