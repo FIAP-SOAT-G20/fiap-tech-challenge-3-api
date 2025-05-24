@@ -5,7 +5,6 @@ import (
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
-	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/docs"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/config"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/handler"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/logger"
@@ -34,7 +33,6 @@ func NewRouter(logger *logger.Logger, cfg *config.Config) *Router {
 		middleware.CORS(),
 	)
 
-	docs.SwaggerInfo.Host = "localhost:" + cfg.ServerPort
 	engine.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	return &Router{
