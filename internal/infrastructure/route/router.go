@@ -5,7 +5,6 @@ import (
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
 
-	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/docs"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/config"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/handler"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/logger"
@@ -34,7 +33,6 @@ func NewRouter(logger *logger.Logger, cfg *config.Config) *Router {
 		middleware.CORS(),
 	)
 
-	docs.SwaggerInfo.Host = "localhost:" + cfg.ServerPort
 	engine.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	return &Router{
@@ -45,6 +43,8 @@ func NewRouter(logger *logger.Logger, cfg *config.Config) *Router {
 
 // RegisterRoutes configure all routes of the application
 func (r *Router) RegisterRoutes(handlers *Handlers) {
+	handlers.Redoc.Register(r.engine.Group("/redoc"))
+
 	// API v1
 	v1 := r.engine.Group("/api/v1")
 	{
@@ -78,4 +78,5 @@ type Handlers struct {
 	Payment      *handler.PaymentHandler
 	Category     *handler.CategoryHandler
 	Auth         *handler.AuthHandler
+	Redoc        *handler.RedocHandler
 }
