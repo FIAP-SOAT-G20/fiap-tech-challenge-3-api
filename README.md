@@ -9,7 +9,6 @@
     <img src="https://img.shields.io/badge/Tools-Gin-informational?style=flat-square&logo=go&color=00ADD8" alt="Gin" />
     <img src="https://img.shields.io/badge/Tools-PostgreSQL-informational?style=flat-square&logo=postgresql&color=4169E1" alt="PostgreSQL" />
     <img src="https://img.shields.io/badge/Tools-Docker-informational?style=flat-square&logo=docker&color=2496ED" alt="Docker" />
-    <img src="https://img.shields.io/badge/Tools-Kubernetes-informational?style=flat-square&logo=kubernetes&color=326CE5" alt="Kubernetes" /></br>
     <img src="https://img.shields.io/badge/Tools-Make-informational?style=flat-square&logo=make&color=6D00CC" alt="Make" />
     <img src="https://img.shields.io/badge/Tools-GitHub_Actions-informational?style=flat-square&logo=githubactions&color=222222" alt="GitHub Actions" />
     <img src="https://img.shields.io/badge/Tools-Swagger-informational?style=flat-square&logo=swagger&color=85EA2D" alt="Swagger" />
@@ -60,10 +59,6 @@ Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube 
 
 ![Component Diagram](docs/tc2-c4-component.jpeg)
 
-### :whale: Kubernetes
-
-![Kubernetes](docs/tc2-k8s.jpg)
-
 ### :open_file_folder: Project Structure
 
 ```sh
@@ -91,7 +86,6 @@ Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube 
 │       ├── middleware
 │       ├── route
 │       └── server
-└── k8s
 ```
 
 <details>
@@ -164,12 +158,10 @@ Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube 
 - [x] Mocks (gomock)
 - [x] Environment variables
 - [x] Graceful shutdown
-- [x] Kubernetes deployment
 - [x] GitHub Actions (CI/CD)
 - [x] GitHub Container Registry (GHCR)
 - [x] Structured logs (slog)
 - [x] Database migrations (golang-migrate)
-- [x] Kubernetes best practices (liveness, readiness, HPA, etc.)
 - [x] API versioning
 - [x] C4 Model diagrams
 - [x] Dev Container (VS Code)
@@ -198,7 +190,6 @@ Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube 
 - [Air](https://github.com/air-verse/air)
 - [slog](https://pkg.go.dev/log/slog)
 - [Docker](https://www.docker.com/)
-- [Kubernetes](https://kubernetes.io/)
 - [Swagger](https://swagger.io/)
 - [Make](https://www.gnu.org/software/make/)
 - [Testify](https://github.com/stretchr/testify)
@@ -262,7 +253,6 @@ make compose-build
 >
 > - Swagger:
 >   - Docker: <http://localhost:8080/docs/index.html>
->   - K8s: <http://localhost/docs/index.html>
 > - Postman collection: [here](docs/postman_collection.json)
 > - [Rest Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client): [here](docs/tc2.http)
 
@@ -280,53 +270,6 @@ make compose-up
 > The application will be available at <http://localhost:8080>
 > Ex: <http://localhost:8080/api/v1/health>
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### :gear: Kubernetes
-
-```bash
-make k8s-apply
-```
-
-> The resources will be created in the `tech-challenge-ns` namespace
-
-> [!TIP]
-> To view the application, run `make k8s-status` or `kubectl get all -n tech-challenge-ns`  
-> To remove the application, run `make k8s-delete`
-
-> [!NOTE]
-> The application will be available at <http://localhost>  
-> Ex: <http://localhost/api/v1/health>
-
-### :mag: Kubernetes Organization
-
-The Kubernetes organization is divided into three main directories: `app`, `config`, and `postgres`.
-
-- **app**: Contains the Kubernetes resources for the application, such as deployment, service, ingress, and HPA.
-- **config**: Contains the Kubernetes resources for the configuration, such as ConfigMap and Secret.
-- **mockserver**: Contains the Kubernetes resources for the Mock Server, such as deployment, service, and HPA.
-- **postgres**: Contains the Kubernetes resources for the PostgreSQL database, such as StatefulSet and Service.
-
-```sh
-.
-├── app
-│   ├── deployment.yaml
-│   ├── hpa.yaml
-│   ├── ingress.yaml
-│   └── service.yaml
-├── config
-│   ├── configmap.yaml
-│   └── secret.yaml
-├── mockserver
-│   ├── deployment.yaml
-│   ├── hpa.yaml
-│   └── service.yaml
-├── namespace.yaml
-└── postgres
-    ├── service.yaml
-    └── statefulset.yaml
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -350,7 +293,6 @@ The Kubernetes organization is divided into three main directories: `app`, `conf
 16. The GitHub Actions will run the tests, lint and vulnerability check automatically
 17. After the PR is approved, merge it to the main branch
 18. Generate a new `release` tag ([here](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/releases/new)) with [semantic versioning](https://semver.org/)
-<!-- 19. The Kubernetes deployment will be updated automatically -->
 
 > [!TIP]
 > 7: `make run` will run the application locally, and will build and run PostgreSQL container using Docker Compose  
@@ -401,3 +343,12 @@ make test
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🔗 Related Projects
+
+This project is part of a larger system that includes:
+
+- [Database Infrastructure (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-db-tf) - Infrastructure as Code for PostgreSQL RDS using Terraform
+- [Kubernetes Infrastructure (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-k8s-tf) - Infrastructure as Code for EKS cluster and Kubernetes resources using Terraform
+- [Lambda Authentication (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-lambda-auth-tf) - Infrastructure as Code for AWS Lambda authentication using Terraform
+
