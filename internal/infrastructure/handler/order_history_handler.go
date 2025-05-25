@@ -22,7 +22,7 @@ func NewOrderHistoryHandler(controller port.OrderHistoryController) *OrderHistor
 }
 
 func (h *OrderHistoryHandler) Register(router *gin.RouterGroup) {
-	router.GET("/", h.List)
+	router.GET("", h.List)
 	router.GET("/:id", h.Get)
 	router.DELETE("/:id", h.Delete)
 }

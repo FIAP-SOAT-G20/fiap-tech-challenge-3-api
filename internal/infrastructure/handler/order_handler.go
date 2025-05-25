@@ -24,8 +24,8 @@ func NewOrderHandler(controller port.OrderController) *OrderHandler {
 }
 
 func (h *OrderHandler) Register(router *gin.RouterGroup) {
-	router.GET("/", h.List)
-	router.POST("/", h.Create)
+	router.GET("", h.List)
+	router.POST("", h.Create)
 	router.GET("/:id", h.Get)
 	router.PUT("/:id", h.Update)
 	router.PATCH("/:id", h.UpdatePartial)
