@@ -11,18 +11,20 @@ import (
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/dto"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/port"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/handler/request"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/middleware"
 )
 
 type PaymentHandler struct {
 	controller port.PaymentController
+	jwtService port.JWTService
 }
 
-func NewPaymentHandler(controller port.PaymentController) *PaymentHandler {
-	return &PaymentHandler{controller}
+func NewPaymentHandler(controller port.PaymentController, jwtService port.JWTService) *PaymentHandler {
+	return &PaymentHandler{controller, jwtService}
 }
 
 func (h *PaymentHandler) Register(router *gin.RouterGroup) {
-	router.POST("/:order_id/checkout", h.Create)
+	router.POST("/:order_id/checkout", h.Create, middleware.JWTAuthMiddleware(h.jwtService))
 	router.POST("/callback", h.Update)
 	router.GET("/:order_id", h.Get)
 }
