@@ -21,7 +21,7 @@ func NewOrderProductHandler(controller port.OrderProductController) *OrderProduc
 }
 
 func (h *OrderProductHandler) Register(router *gin.RouterGroup) {
-	router.GET("/", h.List)
+	router.GET("", h.List)
 	router.POST("/:order_id/:product_id", h.Create)
 	router.GET("/:order_id/:product_id", h.Get)
 	router.PUT("/:order_id/:product_id", h.Update)

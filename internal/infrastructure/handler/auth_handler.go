@@ -21,7 +21,7 @@ func NewAuthHandler(controller port.AuthController) *AuthHandler {
 }
 
 func (h *AuthHandler) Register(router *gin.RouterGroup) {
-	router.POST("/", h.Authenticate)
+	router.POST("", h.Authenticate)
 }
 
 // Authenticate godoc

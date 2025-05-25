@@ -21,8 +21,8 @@ func NewProductHandler(controller port.ProductController) *ProductHandler {
 }
 
 func (h *ProductHandler) Register(router *gin.RouterGroup) {
-	router.GET("/", h.List)
-	router.POST("/", h.Create)
+	router.GET("", h.List)
+	router.POST("", h.Create)
 	router.GET("/:id", h.Get)
 	router.PUT("/:id", h.Update)
 	router.DELETE("/:id", h.Delete)
