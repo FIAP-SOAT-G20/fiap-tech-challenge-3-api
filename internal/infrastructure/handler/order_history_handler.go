@@ -11,17 +11,20 @@ import (
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/dto"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/core/port"
 	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/handler/request"
+	"github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api/internal/infrastructure/middleware"
 )
 
 type OrderHistoryHandler struct {
 	controller port.OrderHistoryController
+	jwtService port.JWTService
 }
 
-func NewOrderHistoryHandler(controller port.OrderHistoryController) *OrderHistoryHandler {
-	return &OrderHistoryHandler{controller: controller}
+func NewOrderHistoryHandler(controller port.OrderHistoryController, jwtService port.JWTService) *OrderHistoryHandler {
+	return &OrderHistoryHandler{controller: controller, jwtService: jwtService}
 }
 
 func (h *OrderHistoryHandler) Register(router *gin.RouterGroup) {
+	router.Use(middleware.JWTAuthMiddleware(h.jwtService))
 	router.GET("", h.List)
 	router.GET("/:id", h.Get)
 	router.DELETE("/:id", h.Delete)

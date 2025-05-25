@@ -18,6 +18,7 @@ type OrderHandlerSuiteTest struct {
 	handler        *handler.OrderHandler
 	router         *gin.Engine
 	mockController *mockport.MockOrderController
+	mockJWTService *mockport.MockJWTService
 	ctx            context.Context
 	requests       map[string]string // Fixture files
 	responses      map[string]string // Golden files
@@ -31,7 +32,8 @@ func (s *OrderHandlerSuiteTest) SetupTest() {
 	ctrl := gomock.NewController(s.T())
 	defer ctrl.Finish()
 	s.mockController = mockport.NewMockOrderController(ctrl)
-	s.handler = handler.NewOrderHandler(s.mockController)
+	s.mockJWTService = mockport.NewMockJWTService(ctrl)
+	s.handler = handler.NewOrderHandler(s.mockController, s.mockJWTService)
 	s.ctx = context.Background()
 
 	// Register routes
