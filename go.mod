@@ -1,6 +1,6 @@
 module github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-api
 
-go 1.24
+go 1.24.2
 
 require (
 	github.com/fatih/color v1.18.0

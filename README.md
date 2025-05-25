@@ -35,8 +35,8 @@ Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube 
 This project is part of a larger system that includes:
 
 - [Database Infrastructure (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-db-tf) - Infrastructure as Code for PostgreSQL RDS using Terraform
-- [Kubernetes Infrastructure (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-k8s-tf) - Infrastructure as Code for EKS cluster and Kubernetes resources using Terraform
-- [Lambda Authentication (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-lambda-auth-tf) - Infrastructure as Code for AWS Lambda authentication using Terraform
+- [Kubernetes Infrastructure (K8s files + Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-k8s-tf) - Infrastructure as Code for EKS cluster and Kubernetes resources using Terraform
+- [Lambda Authentication (Lambda files + Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-lambda-auth-tf) - Infrastructure as Code for AWS Lambda authentication using Terraform
 
 
 ## 📚 Dictionary - Ubiquitous Language
@@ -254,6 +254,13 @@ make compose-build
 > then the mock server will call the webhook `POST payments/callback`,  
 > and the order status will be updated from `PENDING` to `RECEIVED`.  
 > You can verify mock server logs by running `docker logs mockserver.10soat-g22.dev`.
+
+> [!IMPORTANT]
+> Order and Products routes are protected by authentication,
+> you need to use the API Gateway connected to the Lambda function to authenticate the user.
+> Lambda Repository: [here](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-lambda-auth-tf)
+
+
 
 > [!TIP]
 > We have created a step-by-step guide to test the application, you can find it [here](docs/tc2-validation-testing.md).  
