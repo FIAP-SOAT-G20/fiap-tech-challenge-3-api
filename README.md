@@ -28,7 +28,16 @@ Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube 
 
 > [!NOTE]
 > Tech Challenge 1 repository can be found [here](https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase1)  
-> Tech Challenge 2 repository can be found [here](https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2)  
+> Tech Challenge 2 repository can be found [here](https://github.com/FIAP-SOAT-G20/FIAP-TechChallenge-Fase2)
+
+## 🔗 Related Projects
+
+This project is part of a larger system that includes:
+
+- [Database Infrastructure (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-db-tf) - Infrastructure as Code for PostgreSQL RDS using Terraform
+- [Kubernetes Infrastructure (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-k8s-tf) - Infrastructure as Code for EKS cluster and Kubernetes resources using Terraform
+- [Lambda Authentication (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-lambda-auth-tf) - Infrastructure as Code for AWS Lambda authentication using Terraform
+
 
 ## 📚 Dictionary - Ubiquitous Language
 
@@ -66,26 +75,26 @@ Tech Challenge 3 specifications can be found [here](docs/tc3-spec.pdf). Youtube 
 ├── cmd
 │   └── server
 ├── docs
-├── internal
-│   ├── adapter
-│   │   ├── controller
-│   │   ├── gateway
-│   │   └── presenter
-│   ├── core
-│   │   ├── domain
-│   │   │   ├── entity
-│   │   │   ├── value_object
-│   │   ├── port
-│   │   └── usecase
-│   └── infrastructure
-│       ├── config
-│       ├── database
-│       ├── datasource
-│       ├── handler
-│       ├── logger
-│       ├── middleware
-│       ├── route
-│       └── server
+└──internal
+    ├── adapter
+    │   ├── controller
+    │   ├── gateway
+    │   └── presenter
+    ├── core
+    │   ├── domain
+    │   │   ├── entity
+    │   │   ├── value_object
+    │   ├── port
+    │   └── usecase
+    └── infrastructure
+        ├── config
+        ├── database
+        ├── datasource
+        ├── handler
+        ├── logger
+        ├── middleware
+        ├── route
+        └── server
 ```
 
 <details>
@@ -321,10 +330,6 @@ make test
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## :clap: Acknowledgments
-
-- [TBD](TBD)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :busts_in_silhouette: Contributors
@@ -343,12 +348,3 @@ make test
 </div>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🔗 Related Projects
-
-This project is part of a larger system that includes:
-
-- [Database Infrastructure (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-db-tf) - Infrastructure as Code for PostgreSQL RDS using Terraform
-- [Kubernetes Infrastructure (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-k8s-tf) - Infrastructure as Code for EKS cluster and Kubernetes resources using Terraform
-- [Lambda Authentication (Terraform)](https://github.com/FIAP-SOAT-G20/fiap-tech-challenge-3-lambda-auth-tf) - Infrastructure as Code for AWS Lambda authentication using Terraform
-
